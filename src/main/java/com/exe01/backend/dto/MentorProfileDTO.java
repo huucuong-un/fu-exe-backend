@@ -1,10 +1,7 @@
 package com.exe01.backend.dto;
 
-import com.exe01.backend.dto.response.mentorProfile.FindMentorProfileByIdResponse;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import lombok.*;
 
 import java.io.Serializable;
 
@@ -12,9 +9,17 @@ import java.io.Serializable;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class MentorProfileDTO extends BaseDTO implements Serializable {
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private MentorDTO mentorDTO;
+
     private String linkedinUrl;
+
+    private String facebookUrl;
+
+    private String googleMeetUrl;
 
     private String requirement;
 
@@ -26,6 +31,6 @@ public class MentorProfileDTO extends BaseDTO implements Serializable {
 
     private String status;
 
-    private FindMentorProfileByIdResponse mentorDTO;
+    private String fullName;
 
 }
