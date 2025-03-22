@@ -16,6 +16,8 @@ import java.util.UUID;
 @NoArgsConstructor
 public class BaseMentorProfileRequest {
 
+
+    private  UUID mentorProfileId;
     @NotBlank(message = "This field must not be blank")
     @NotNull(message = "This field must not be null")
     private UUID mentorId;
@@ -37,5 +39,13 @@ public class BaseMentorProfileRequest {
 
     @NotBlank(message = "This field must not be blank")
     @NotNull(message = "This field must not be null")
+    private String facebookUrl;
+
+    @NotBlank(message = "This field must not be blank")
+    @NotNull(message = "This field must not be null")
+    private String googleMeetUrl;
+
     private String profilePicture;
+
+    private String status;
 }

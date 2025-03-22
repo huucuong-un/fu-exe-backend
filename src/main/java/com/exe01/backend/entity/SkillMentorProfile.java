@@ -18,20 +18,12 @@ import lombok.Setter;
 @Table(name = "skill_mentor_profile_tbl")
 public class SkillMentorProfile extends BaseEntity {
 
-    @NotBlank(message = "This field must not be blank")
-    @NotNull(message = "This field must not be null")
     @ManyToOne
     @JoinColumn(name = "mentor_profile_id", referencedColumnName = "id")
     private MentorProfile mentorProfile;
 
-    @NotBlank(message = "This field must not be blank")
-    @NotNull(message = "This field must not be null")
     @ManyToOne
     @JoinColumn(name = "skill_id", referencedColumnName = "id")
     private Skill skill;
 
-    @NotBlank(message = "This field must not be blank")
-    @NotNull(message = "This field must not be null")
-    @Column(name = "skill_level")
-    private String skillLevel;
 }
